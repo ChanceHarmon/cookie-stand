@@ -1,6 +1,38 @@
 'use strict'
 console.log('script loaded');
+var hours = [
+  '6am',
+  '7am',
+  '8am',
+  '9am',
+  '10am',
+  '11am',
+  '12pm',
+  '1pm',
+  '2pm',
+  '3pm',
+  '4pm',
+  '5pm',
+  '6pm',
+  '7pm',
+  '8pm',
+];
+var theTable = document.getElementById('sales-table');
 
+function CookieStand(name, min, max, avg, id) {
+  this.name = name;
+  this.avg = avg;
+  this.min = min;
+  this.max = max;
+  this.customersEachHour = [];
+  this.cookiesEachHour = [];
+  this.totalDailyCookies = 0;
+  this.is = id;
+  this.calcCustomerEachHour = function() {
+  this.calcUsuctomerEachHour.push(random(this.min, this.max));
+
+}
+};
 getRandom () = 
   randomNum = Math.floor (Math.random() * (this.max - this.min))+this.min;
   var totalCookies = Math.floor (randomNum * this.avg);
