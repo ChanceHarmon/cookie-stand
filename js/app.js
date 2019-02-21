@@ -17,12 +17,24 @@ var hours = [
   '7pm',
   '8pm',
 ];
+var theTable = document.getElementById('sales-table');
 
-var pikeUl = document.getElementById('pike');
-var seaTacUl = document.getElementById('airport');
-var seattleUl = document.getElementById('seattle');
-var hillUl = document.getElementById('capHill');
-var alkiUl = document.getElementById('beach');
+function CookieStand(name, min, max, avg, id) {
+  this.name = name;
+  this.avg = avg;
+  this.min = min;
+  this.max = max;
+  this.customersEachHour = [];
+  this.cookiesEachHour = [];
+  this.totalDailyCookies = 0;
+  this.is = id;
+  this.calcCustomerEachHour = function() {
+  this.calcUsuctomerEachHour.push(random(this.min, this.max));
+
+}
+};
+
+
 
 
 
