@@ -96,7 +96,9 @@ function makeFooterRow(){
   trEl.appendChild(thEl);
 
   theTable.appendChild(trEl);
+  
 }
+
 
 var pikePlace = new CookieStand('Pike Place Market', 23, 65, 6.3, 'pike');
 var seatacAirport = new CookieStand('Seatac Airport', 3, 24, 1.2, 'seatac');
@@ -105,11 +107,32 @@ var capitolHill = new CookieStand('Capitol Hill', 20, 38, 2.3, 'caphill');
 var alki = new CookieStand('Alki', 2, 16, 4.6, 'alki');
 
 var allShops = [pikePlace, seatacAirport, seattleCenter, capitolHill, alki];
+
+var addNew = document.getElementById("add-new");
+function createNewStore (event){
+  var loc= (event.target.location.value);
+  var min= parseInt(event.target.min.value,10);
+  var max= parseInt(event.target.max.value,10);
+  var avg= parseInt(event.target.avg.value,10);
+  var id= (event.target.id.value);
+
+  var newStore = new CookieStand(loc, min, max, avg, id);
+  allShops.push(newStore);
+  //remove.makeFooterRow();
+  newStore.render();
+  makeFooterRow();
+}
+
+addNew.addEventListener('submit', createNewStore);
+
 (function renderTable() {
   makeHeaderRow();
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
   }
+  
   makeFooterRow();
-
+  createNewStore();
+  
+  
 })();
