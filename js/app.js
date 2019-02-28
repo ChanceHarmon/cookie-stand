@@ -125,16 +125,22 @@ function createNewStore (event){
   makeFooterRow();
 }
 
+
 storeNew.addEventListener('submit', createNewStore);
 
 function renderTable() {
   makeHeaderRow();
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
+    makeFooterRow();
+  
   }
+
 
 }
   renderTable();
   makeFooterRow();
+
+
   
   
