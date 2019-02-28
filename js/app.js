@@ -108,31 +108,33 @@ var alki = new CookieStand('Alki', 2, 16, 4.6, 'alki');
 
 var allShops = [pikePlace, seatacAirport, seattleCenter, capitolHill, alki];
 
-var addNew = document.getElementById("add-new");
+var storeNew = document.getElementById("add-new");
 function createNewStore (event){
-  var loc= (event.target.location.value);
-  var min= parseInt(event.target.min.value,10);
-  var max= parseInt(event.target.max.value,10);
-  var avg= parseInt(event.target.avg.value,10);
-  var id= (event.target.id.value);
-
-  var newStore = new CookieStand(loc, min, max, avg, id);
+  event.preventDefault();
+  var loc= event.target.location.value;
+  var min= event.target.min.value;
+  var max= event.target.max.value;
+  var avg= event.target.avg.value;
+  
+//debugger;
+  var newStore = new CookieStand(loc, min, max, avg);
   allShops.push(newStore);
-  //remove.makeFooterRow();
+  var last = document.getElementById('sales-table').lastChild;
+  document.getElementById('sales-table').removeChild(last);
   newStore.render();
   makeFooterRow();
 }
 
-addNew.addEventListener('submit', createNewStore);
+storeNew.addEventListener('submit', createNewStore);
 
-(function renderTable() {
+function renderTable() {
   makeHeaderRow();
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
   }
-  
+
+}
+  renderTable();
   makeFooterRow();
-  createNewStore();
   
   
-})();
