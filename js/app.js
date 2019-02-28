@@ -123,16 +123,19 @@ function createNewStore (event){
   makeFooterRow();
 }
 
-addNew.addEventListener('submit', createNewStore);
+document.getElementById("submit").addEventListener("submit", createNewStore);
+
+//createNewStore();
 
 (function renderTable() {
   makeHeaderRow();
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
+    makeFooterRow();
+  
   }
   
-  makeFooterRow();
-  createNewStore();
+  //createNewStore(allShops[i], render);
   
   
 })();
