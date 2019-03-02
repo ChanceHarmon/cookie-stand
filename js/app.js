@@ -116,7 +116,7 @@ function createNewStore (event){
   var max= event.target.max.value;
   var avg= event.target.avg.value;
   
-//debugger;
+
   var newStore = new CookieStand(loc, min, max, avg);
   allShops.push(newStore);
   var last = document.getElementById('sales-table').lastChild;
@@ -132,7 +132,7 @@ function renderTable() {
   makeHeaderRow();
   for(var i = 0; i < allShops.length; i++) {
     allShops[i].render();
-    makeFooterRow();
+    
   
   }
 
