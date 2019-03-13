@@ -1,0 +1,19 @@
+body {
+  background-color: pink;
+}
+
+
+
+#sales-table {
+  background-color: black;
+  color: white;
+}
+
+header  p {
+  color: red;
+}
+
+header #left {
+  width: 200px;
+  height: 100px;
+}
